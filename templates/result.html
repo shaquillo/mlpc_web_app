@@ -29,58 +29,58 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 <!--===============================================================================================-->
 
-	<style>
-		.form-control:focus{border-color: rgba(132, 106, 221, 1) !important;} 
-		.has-error .form-control:focus{border-color: red !important; } 
-	</style>
 </head>
 <body>
 
 	<div class="bg-container-contact100" style="background-color: rgba(132, 106, 221, 1);">
 		<div class="contact100-header flex-sb-m">
-			<a href="#" class="contact100-header-logo">
+			<a href="{{url_for('hello')}}" class="contact100-header-logo">
 				<img src="{{ url_for('static', filename='assets/icons/logo.png') }}" alt="LOGO">
 			</a>
 
-		</div>
-	</div>
-    <div style="height: 100%;">
-        <div class="d-flex justify-content-center">
-            <div class="card" >
+        </div>
+        
+        <div class="d-flex flex-column justify-content-center align-items-center" style="padding-top: 50px;">
+            <div class="card" style="width: 70%;height: 70%;">
                 <div class="card-header">
                     <h5>Predictions</h5>
                 </div>
                 <div class="card-body">
-                    <p class="card-title" style="padding-top: 20px;padding-bottom: 20px;">Les departements les mieux adapte dans l'ordre</p>
-                
-                    <div class="card-text">
-                        {% for i in pred_result %}
-                            <div class="row">
-                                <p>loop.index - </p>
-                                <p>
-                                    {% if i == 0 %}
-                                        GENIE INDUSTRIELLE
-                                    {% elif i == 1 %}
-                                        GENIE MECANIQUE
-                                    {% elif i == 2 %}
-                                        GENIE INFORMATIQUE
-                                    {% elif i == 3 %}
-                                        GENIE ELECTRIQUE
-                                    {% elif i == 4 %}
-                                        GENIE CIVILE
-                                    {% elif i == 5 %}
-                                        GENIE TELECOMMUNICATION
-                                    {% endif %}
-                                </p>
-                            </div>
-                        {% endfor %}
+                    <div class="card-title d-flex justify-content-center">
+                        <p style="padding-top: 20px;padding-bottom: 20px; color: rgba(132, 106, 221, 1) !important;font-size: 1.5rem;">Les departements les mieux adapte dans l'ordre</p>
+                    </div>
+                    <div class="card-text d-flex justify-content-center">
+                        <div>
+                            {% for i in pred_result %}
+                                <div class="row">
+                                    <p style="font-size: 1.3rem !important;">{{ loop.index }} -  &ThickSpace;</p>
+                                    <p style="font-size: 1.3rem !important;">
+                                        {% if i == 0 %}
+                                            GENIE INDUSTRIELLE
+                                        {% elif i == 1 %}
+                                            GENIE MECANIQUE
+                                        {% elif i == 2 %}
+                                            GENIE INFORMATIQUE
+                                        {% elif i == 3 %}
+                                            GENIE ELECTRIQUE
+                                        {% elif i == 4 %}
+                                            GENIE CIVILE
+                                        {% elif i == 5 %}
+                                            GENIE TELECOMMUNICATION
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
                     
             </div>
-        </div>
+        </div> 
+    
     </div>
-
+    
+    
     
 
     <!--===============================================================================================-->

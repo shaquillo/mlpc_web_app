@@ -44,12 +44,12 @@
 
 		</div>
 		<div style="height: 100%;">
-			<div style="text-align: center;">
+			<div style="text-align: center; color: rgba(132, 106, 221, 1);">
 				<p style="color: white;font-size: 2em;font-weight: bold;width: 100%;" class="mt-5 mb-4">Bienvenu<br>sur<br><span style="color:  rgba(132, 106, 221, 1);">Student Speciality Councelling</span></p> 
 			</div>
 			<div style="display: flex; justify-content: center;">
 				<button class="btn-show-contact100" data-toggle="modal" data-target="#train_model">
-					Start
+					Demarrer
 				</button>
 			</div>
 		</div>
@@ -59,132 +59,132 @@
 		<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-			<h5 class="modal-title" id="exampleModalLongTitle">Student Marks</h5>
+			<h5 class="modal-title" id="exampleModalLongTitle">Notes de l'etudiant</h5>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
 			</div>
-			<div class="modal-body d-flex justify-content-center">
+			<div class="modal-body d-flex justify-content-center" style="padding-right: 5px;padding-left: 5px;">
 				<form action="{{ url_for('prediction')}}" method="POST">
-
-					<div class="d-flex justify-content-center" style="margin-top: 20px; margin-bottom: 10px;"><p class="mx-3" style="font-size: medium; font-weight: bold;">Notes de MSP 1</p></div>
+					<p style="font-weight: bold !important; color: black !important;">NB: Les notes doivent etre compris entre 0 et 20</p>
+					<div class="d-flex justify-content-center" style="margin-top: 20px; margin-bottom: 10px;"><p class="mx-3" style="font-size: medium; font-weight: bold; color: rgba(132, 106, 221, 1) !important;">Notes de MSP 1</p></div>
 					
 					<div class="form-group row">
 						<label for="MATH122" >MATHEMATIQUES ET INFORMATIQUE 1</label>
-						<input type="number" step=0.01 class="form-control" id="MATH122" name="MATH122">
+						<input required min="0" max="20" type="number" step=0.01 class="form-control" id="MATH122" name="MATH122">
 					</div>
 					<div class="form-group row">
 						<label for="MAT_INF111" >MATHEMATIQUES ET INFORMATIQUE 2</label>
-						<input type="number" step=0.01 class="form-control" id="MAT_INF111" name="MATH_INF111">
+						<input required type="number" step=0.01 class="form-control" id="MAT_INF111" name="MATH_INF111">
 					</div>
 					<div class="form-group row">
 						<label for="MAT_INF121" >MATHEMATIQUES ET INFORMATIQUE 3</label>
-						<input type="number" step=0.01 class="form-control" id="MAT121" name="MATH_INF121">
+						<input required type="number" step=0.01 class="form-control" id="MAT121" name="MATH_INF121">
 					  </div>
 					<div class="form-group row">
 						<label for="PHY111" >SCIENCE PHYSIQUE 1</label>
-						<input type="number" step=0.01 class="form-control" id="PHY111" name="PHY111">
+						<input required type="number" step=0.01 class="form-control" id="PHY111" name="PHY111">
 					</div>
 					<div class="form-group row">
 						<label for="PHY121" >SCIENCE PHYSIQUE 3</label>
-						<input type="number" step=0.01 class="form-control" id="PHY121" name="PHY121">
+						<input required type="number" step=0.01 class="form-control" id="PHY121" name="PHY121">
 					</div>
 					<div class="form-group row">
 						<label for="PHY112" >SCIENCE PHYSIQUE 2</label>
-						<input type="number" step=0.01 class="form-control" id="PHY112" name="PHY112">
+						<input required type="number" step=0.01 class="form-control" id="PHY112" name="PHY112">
 					</div>
 					<div class="form-group row">
 						<label for="DES124" >DESSIN TECHNIQUE</label>
-						<input type="number" step=0.01 class="form-control" id="DES124" name="DES124">
+						<input required type="number" step=0.01 class="form-control" id="DES124" name="DES124">
 					</div>
 
-					<div class="mb-3 d-flex justify-content-center" style="padding-top: 40px; margin-top: 20px; margin-bottom: 10px;"><p class="mx-3" style="font-size: medium; font-weight: bold;">Notes de MSP 2</p></div>
+					<div class="mb-3 d-flex justify-content-center" style="padding-top: 40px; margin-top: 20px; margin-bottom: 10px;"><p class="mx-3" style="font-size: medium; font-weight: bold; color: rgba(132, 106, 221, 1) !important;">Notes de MSP 2</p></div>
 
 					<div class="form-group row">
 						<label for="MATH217" >SERIES ET INTEGRALES GENERALISES</label>
-						<input type="number" step=0.01 class="form-control" id="MATH217" name="MATH217">
+						<input required type="number" step=0.01 class="form-control" id="MATH217" name="MATH217">
 					</div>
 
 					<div class="form-group row">
 						<label for="MATH216" >PROBABILITES ET STATISTIQUES</label>
-						<input type="number" step=0.01 class="form-control" id="MATH216" name="MATH216">
+						<input required type="number" step=0.01 class="form-control" id="MATH216" name="MATH216">
 					</div>
 					<div class="form-group row">
 						<label for="MATH227" >ANALYSE NUMERIQUE</label>
-						<input type="number" step=0.01 class="form-control" id="MATH227" name="MATH227">
+						<input required type="number" step=0.01 class="form-control" id="MATH227" name="MATH227">
 					</div>
 					<div class="form-group row">
 						<label for="MATH226" >ANALYSE DANS LES ESPACES VEC. DE DIM. FINIE</label>
-						<input type="number" step=0.01 class="form-control" id="MATH226" name="MATH226">
+						<input required type="number" step=0.01 class="form-control" id="MATH226" name="MATH226">
 					</div>
 					<div class="form-group row">
 						<label for="MATH212" >MATHEMATIQUES</label>
-						<input type="number" step=0.01 class="form-control" id="MATH212" name="MATH212">
+						<input required type="number" step=0.01 class="form-control" id="MATH212" name="MATH212">
 					</div>
 					<div class="form-group row">
 						<label for="MATH218" >ALGEBRE MULTILINEARE</label>
-						<input type="number" step=0.01 class="form-control" id="MATH218" name="MATH218">
+						<input required type="number" step=0.01 class="form-control" id="MATH218" name="MATH218">
 					</div>
 					<div class="form-group row">
 						<label for="MATH_INF211" >MATHEMATIQUE ET INFORMATIQUE 3</label>
-						<input type="number" step=0.01 class="form-control" id="MATH_INF211" name="MATH_INF211">
+						<input required type="number" step=0.01 class="form-control" id="MATH_INF211" name="MATH_INF211">
 					</div>
 					<div class="form-group row">
 						<label for="MATH_INF221" >MATHEMATIQUE ET INFORMATIQUE 4</label>
-						<input type="number" step=0.01 class="form-control" id="MATH_INF221" name="MATH_INF221">
+						<input required type="number" step=0.01 class="form-control" id="MATH_INF221" name="MATH_INF221">
 					</div>
 					<div class="form-group row">
 						<label for="INF222" >INFORMATIQUE 4</label>
-						<input type="number" step=0.01 class="form-control" id="INF222" name="INF222">
+						<input required type="number" step=0.01 class="form-control" id="INF222" name="INF222">
 					</div>
 					<div class="form-group row">
 						<label for="INF212" >INFORMATIQUE 3</label>
-						<input type="number" step=0.01 class="form-control" id="INF212" name="INF212">
+						<input required type="number" step=0.01 class="form-control" id="INF212" name="INF212">
 					</div>
 					<div class="form-group row">
 						<label for="PHY213" >ELECTROCINETIQUE</label>
-						<input type="number" step=0.01 class="form-control" id="PHY213" name="PHY213">
+						<input required type="number" step=0.01 class="form-control" id="PHY213" name="PHY213">
 					</div>
 					<div class="form-group row">
 						<label for="PHY223" >OPTIQUE GEOMETRIQUE ET ONDULATOIRE</label>
-						<input type="number" step=0.01 class="form-control" id="PHY223" name="PHY223">
+						<input required type="number" step=0.01 class="form-control" id="PHY223" name="PHY223">
 					</div>
 					<div class="form-group row">
 						<label for="PHY224" >THERMODYNAMIQUE</label>
-						<input type="number" step=0.01 class="form-control" id="PHY224" name="PHY224">
+						<input required type="number" step=0.01 class="form-control" id="PHY224" name="PHY224">
 					</div>
 					<div class="form-group row">
 						<label for="PHY225" >CIRCUIT ELECTRIQUES ET ELECTRIQUES</label>
-						<input type="number" step=0.01 class="form-control" id="PHY225" name="PHY225">
+						<input required type="number" step=0.01 class="form-control" id="PHY225" name="PHY225">
 					</div>
 					<div class="form-group row">
 						<label for="PHY214" >MECANIQUE 2</label>
-						<input type="number" step=0.01 class="form-control" id="PHY214" name="PHY214">
+						<input required type="number" step=0.01 class="form-control" id="PHY214" name="PHY214">
 					</div>
 					<div class="form-group row">
 						<label for="PHY215" >TRAVAUX PRATIQUE DE PHYSIQUE 2</label>
-						<input type="number" step=0.01 class="form-control" id="PHY215" name="PHY215">
+						<input required type="number" step=0.01 class="form-control" id="PHY215" name="PHY215">
 					</div>
 					<div class="form-group row">
 						<label for="PHY211">SCIENCE PHYSIQUE 1</label>
-						<input type="number" step=0.01 class="form-control" id="PHY228" name="PHY211">
+						<input required type="number" step=0.01 class="form-control" id="PHY228" name="PHY211">
 					</div>
 					<div class="form-group row">
 						<label for="PHYS221" >SCIENCES PHYSIQUES 2</label>
-						<input type="number" step=0.01 class="form-control" id="PHY221" name="PHY221">
+						<input required type="number" step=0.01 class="form-control" id="PHY221" name="PHY221">
 					</div>
 					
 					<div class="form-group row">
 						<label for="PHY222" >SCIENCES PHYSIQUES 3</label>
-						<input type="number" step=0.01 class="form-control" id="PHY222" name="PHY222">
+						<input required type="number" step=0.01 class="form-control" id="PHY222" name="PHY222">
 					</div>
 					<div class="form-group row">
 						<label for="PHY228">STATIQUE</label>
-						<input type="number" step=0.01 class="form-control" id="PHY228" name="PHY228">
+						<input required type="number" step=0.01 class="form-control" id="PHY228" name="PHY228">
 					</div>
 
 					<div class="form-group row d-flex justify-content-center mt-4">
-						<button type="submit" class="btn btn-primary" style="width: 35%;border-radius: 50px;">Lancer!</button>
+						<button type="submit" class="btn btn-primary" style="width: 35%;border-radius: 50px; background-color :rgba(132, 106, 221, 1); border-color: rgba(132, 106, 221, 1);">Lancer!</button>
 					  </div>
 
 				  </form>
