@@ -75,24 +75,24 @@ ul, li {
 
 
 /*---------------------------------------------*/
-input {
+/* input {
 	outline: none;
 	border: none;
-}
+} */
 
-textarea {
+/* textarea {
   outline: none;
   border: none;
 }
 
-textarea:focus, input:focus {
+textarea:focus , input:focus {
   border-color: transparent !important;
-}
+} */
 
-input:focus::-webkit-input-placeholder { color:transparent; }
+/* input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; }
 input:focus::-moz-placeholder { color:transparent; }
-input:focus:-ms-input-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; } */
 
 textarea:focus::-webkit-input-placeholder { color:transparent; }
 textarea:focus:-moz-placeholder { color:transparent; }
