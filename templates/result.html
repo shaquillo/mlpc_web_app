@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Student Councelling</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/icons/favicon.ico')}}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/iconic/css/material-design-iconic-font.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animsition/css/animsition.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/daterangepicker/daterangepicker.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+<!--===============================================================================================-->
+
+	<style>
+		.form-control:focus{border-color: rgba(132, 106, 221, 1) !important;} 
+		.has-error .form-control:focus{border-color: red !important; } 
+	</style>
+</head>
+<body>
+
+	<div class="bg-container-contact100" style="background-color: rgba(132, 106, 221, 1);">
+		<div class="contact100-header flex-sb-m">
+			<a href="#" class="contact100-header-logo">
+				<img src="{{ url_for('static', filename='assets/icons/logo.png') }}" alt="LOGO">
+			</a>
+
+		</div>
+	</div>
+    <div style="height: 100%;">
+        <div class="d-flex justify-content-center">
+            <div class="card" >
+                <div class="card-header">
+                    <h5>Predictions</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-title" style="padding-top: 20px;padding-bottom: 20px;">Les departements les mieux adapte dans l'ordre</p>
+                
+                    <div class="card-text">
+                        {% for i in pred_result %}
+                            <div class="row">
+                                <p>loop.index - </p>
+                                <p>
+                                    {% if i == 0 %}
+                                        GENIE INDUSTRIELLE
+                                    {% elif i == 1 %}
+                                        GENIE MECANIQUE
+                                    {% elif i == 2 %}
+                                        GENIE INFORMATIQUE
+                                    {% elif i == 3 %}
+                                        GENIE ELECTRIQUE
+                                    {% elif i == 4 %}
+                                        GENIE CIVILE
+                                    {% elif i == 5 %}
+                                        GENIE TELECOMMUNICATION
+                                    {% endif %}
+                                </p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{ url_for('static', filename='vendor/animsition/js/animsition.min.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{ url_for('static', filename='vendor/bootstrap/js/popper.js')}}"></script>
+        <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{ url_for('static', filename='vendor/select2/select2.min.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{ url_for('static', filename='vendor/daterangepicker/moment.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='vendor/daterangepicker/daterangepicker.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{ url_for('static', filename='vendor/countdowntime/countdowntime.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+    
+          gtag('config', 'UA-23581568-13');
+        </script>
+</body>
+</html>
