@@ -14,6 +14,21 @@ model2 = CatBoostClassifier()
 model2.load_model(fname=model2_dir)
 model3 = lgb.Booster(model_file=model3_dir)
 
+def lgbVal(num):
+    if num == 0:
+        pred3 = 'GM'
+    elif num == 1:
+        pred3 = 'GELE'
+    elif num == 2:
+        pred3 = 'GI'
+    elif num == 3:
+        pred3 = 'GIND'
+    elif num == 4:
+        pred3 = 'GC'
+    else :
+        pred3 = 'GTEL'
+    return pred3
+
 def preprocess_data(data):
     cat_cols = ['INF212', 'MATH217', 'INF222', 'PHY223', 'PHY224', 'PHY225', 'MATH226', 'MATH227', 'PHY213', 'PHY215', 'PHY214', 'MATH216', 'MATH218', 'PHY228', 'MATH_INF211', 'PHY211', 'MATH212', 'PHY221', 'PHY222', 'MATH_INF221', 'PHY111', 'MATH_INF121', 'MATH_INF111', 'MATH122', 'DES124', 'PHY121', 'PHY112']
     data1 = {}
@@ -48,31 +63,35 @@ def preprocess_data(data):
 def predict(data):
     to_pred = preprocess_data(data)
     result = []
-    result.append(model1.predict(to_pred)[0])
-    prediction2 = model2.predict(to_pred)[0]
-    print('===============', prediction2)
+    predictions1 = model1.predict(to_pred)
+    result.append(predictions1[0])
+    predictions2 = model2.predict(to_pred)
+    # print('===============', predictions1)
 
-    if prediction2 not in result:
-        result.append(prediction2)
+    if predictions2[0] not in result:
+        result.append(predictions2[0])
 
-    prediction3 = model3.predict(to_pred)[0]
+    prediction3 = model3.predict(to_pred)
 
-    i = np.argmax(prediction3)
-    if i == 0:
-        pred3 = 'GM'
-    elif i == 1:
-        pred3 = 'GELE'
-    elif i == 2:
-        pred3 = 'GI'
-    elif i == 3:
-        pred3 = 'GIND'
-    elif i == 4:
-        pred3 = 'GC'
-    else :
-        pred3 = 'GTEL'
+    preds3 = np.argsort(prediction3)
+    # print(preds3)
 
-    if pred3 not in result:
-        result.append(pred3)
-    print('---------',result)
+    # i = np.argmax(prediction3)
+    # print(i)
+    # pred3 = lgbVal(i)
+
+    # if pred3 not in result:
+    #     result.append(pred3)
+    # print('---------',result)
+
+    l = 0
+    preds3 = preds3[0]
+    preds3 = preds3[::-1]
+    print(preds3)
+    while len(result) < 3:
+        pred3 = lgbVal(preds3[l])
+        if pred3 not in result:
+            result.append(pred3)
+        l += 1
 
     return result
