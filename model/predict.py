@@ -14,20 +14,20 @@ model2 = CatBoostClassifier()
 model2.load_model(fname=model2_dir)
 model3 = lgb.Booster(model_file=model3_dir)
 
-def lgbVal(num):
-    if num == 0:
-        pred3 = 'GM'
-    elif num == 1:
-        pred3 = 'GELE'
-    elif num == 2:
-        pred3 = 'GI'
-    elif num == 3:
-        pred3 = 'GIND'
-    elif num == 4:
-        pred3 = 'GC'
-    else :
-        pred3 = 'GTEL'
-    return pred3
+# def lgbVal(num):
+#     if num == 0:
+#         pred3 = 'GM'
+#     elif num == 1:
+#         pred3 = 'GELE'
+#     elif num == 2:
+#         pred3 = 'GI'
+#     elif num == 3:
+#         pred3 = 'GIND'
+#     elif num == 4:
+#         pred3 = 'GC'
+#     else :
+#         pred3 = 'GTEL'
+#     return pred3
 
 def preprocess_data(data):
     cat_cols = ['INF212', 'MATH217', 'INF222', 'PHY223', 'PHY224', 'PHY225', 'MATH226', 'MATH227', 'PHY213', 'PHY215', 'PHY214', 'MATH216', 'MATH218', 'PHY228', 'MATH_INF211', 'PHY211', 'MATH212', 'PHY221', 'PHY222', 'MATH_INF221', 'PHY111', 'MATH_INF121', 'MATH_INF111', 'MATH122', 'DES124', 'PHY121', 'PHY112']
@@ -62,18 +62,29 @@ def preprocess_data(data):
 
 def predict(data):
     to_pred = preprocess_data(data)
-    result = []
+    # result = []
     predictions1 = model1.predict(to_pred)
-    result.append(predictions1[0])
-    predictions2 = model2.predict(to_pred)
+    result = predictions1[:3]
+
+    return result
+
+
+
+
+    # to_pred = preprocess_data(data)
+    # # result = []
+    # predictions1 = model1.predict(to_pred)
+    # result = predictions1[:3]
+    # result.append(predictions1[0])
+    # predictions2 = model2.predict(to_pred)
     # print('===============', predictions1)
 
-    if predictions2[0] not in result:
-        result.append(predictions2[0])
+    # if predictions2[0] not in result:
+    #     result.append(predictions2[0])
 
-    prediction3 = model3.predict(to_pred)
+    # prediction3 = model3.predict(to_pred)
 
-    preds3 = np.argsort(prediction3)
+    # preds3 = np.argsort(prediction3)
     # print(preds3)
 
     # i = np.argmax(prediction3)
@@ -84,14 +95,14 @@ def predict(data):
     #     result.append(pred3)
     # print('---------',result)
 
-    l = 0
-    preds3 = preds3[0]
-    preds3 = preds3[::-1]
-    print(preds3)
-    while len(result) < 3:
-        pred3 = lgbVal(preds3[l])
-        if pred3 not in result:
-            result.append(pred3)
-        l += 1
+    # l = 0
+    # preds3 = preds3[0]
+    # preds3 = preds3[::-1]
+    # print(preds3)
+    # while len(result) < 3:
+    #     pred3 = lgbVal(preds3[l])
+    #     if pred3 not in result:
+    #         result.append(pred3)
+    #     l += 1
 
-    return result
+    # return result
